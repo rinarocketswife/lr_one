@@ -7,3 +7,22 @@ body {
 A {
     text-decoration: none;
 }
+
+a:hover {
+    color: blue;
+    background-color: rgb(220, 111, 111);
+    text-decoration: underline;
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: gray;
+}
