@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проскурякова Ирина Дмитриевна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <style>
+        .img {
+            display: inline-block;
+            position: relative;
+        }
+        .cloud1 {
+            border: 2px dashed #462303e9;
+            border-radius: 50%;
+            width: 60px;
+            height: 30px;
+            line-height:30px;
+            display: grid;
+            margin: 0 auto;
+            color: black;
+            background-color: wheat;
+            box-shadow: 10px 5px 5px black;
+            position: relative;
+            top: -400px;
+            left: 400px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 3.5s ease;
+        }
+        .cloud2 {
+            border: 4px dashed #462303e9;
+            border-radius: 50%;
+            width: 100px;
+            height: 50px;
+            line-height:50px;
+            display: grid;
+            margin: 0 auto;
+            color: black;
+            background-color: wheat;
+            box-shadow: 10px 5px 5px black;
+            position: relative;
+            top: -500px;
+            left: 250px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 2.5s ease;
+        }
+        .cloud3 {
+            border: 4px dashed #462303e9;
+            border-radius: 50%;
+            width: 150px;
+            height: 55px;
+            line-height:55px;
+            display: grid;
+            margin: 0 auto;
+            color: black;
+            background-color: wheat;
+            box-shadow: 10px 5px 5px black;
+            position: relative;
+            top: -600px;
+            left: 100px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+        .cloud4 {
+            border: 4px dashed #462303e9;
+            border-radius: 50%;
+            width: 200px;
+            height: 80px;
+            line-height:80px;
+            display: grid;
+            margin: 0 auto;
+            color: black;
+            text-align: center;
+            background-color: wheat;
+            box-shadow: 10px 5px 5px black;
+            font-size: 18pt;
+            position: relative;
+            top: -700px;
+            left: -100px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .img:hover .cloud1 {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        .img:hover .cloud2 {
+            opacity: 1;
+            transition: opacity 1.5s ease;
+        }
+        .img:hover .cloud3 {
+            opacity: 1;
+            transition: opacity 2.5s ease;
+        }
+        .img:hover .cloud4 {
+            opacity: 1;
+            transition: opacity 3.5s ease;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    НГТУ, ФБ, Лабораторная работа 4
+   </header>
+
+   <main>
+        <div class="img">
+            <img src="1.jpg" height="600px" width="1100px">
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+            <div class="cloud3"></div>
+            <div class="cloud4">ХА-ХА-ХА</div>
+        </div>
+   </main>
+
+   <footer>
+    &copy; Ирина Проскурякова, ФБИ-24, 2 курс, 2024
+</footer>
+</body>
+</html>
