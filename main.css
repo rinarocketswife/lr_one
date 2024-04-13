@@ -6,12 +6,14 @@ body {
 }
 A {
     text-decoration: none;
+    transition: 1s 2s;
 }
 
 a:hover {
     color: blue;
     background-color: rgb(220, 111, 111);
     text-decoration: underline;
+    transition: 0.3s;
 }
 
 a:active {
