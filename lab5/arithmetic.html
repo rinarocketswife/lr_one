@@ -15,30 +15,45 @@
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+        function showAuthor() {
+            let author = "Автор страницы:\nПроскурякова Ирина Дмитриевна"
+            alert(author)
+        }
+        function showText() {
+            let text = "Добро пожаловать на мою страницу!"
+            alert(text)
+        }
     </script>
     <style>
         .message {
-            width: 200px;
-            height: 40px;
-            background-color: rgb(239, 103, 200);
+            width: 250px;
+            height: 30px;
+            background-color: rgb(230, 100, 150);
             border: 1px solid;
             border-radius: 5px;
+            text-align: center;
             display: inline-block;
+            cursor: pointer;
+        }
+        header {
+            cursor: pointer;
+        }
+        footer {
             cursor: pointer;
         }
     </style>
 </head>
 <body>
-   <header>
+   <header onclick="showAuthor()">
     НГТУ, ФБ, Лабораторная работа 5
    </header>
 
    <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
    </main>
 
-   <footer>
+   <footer ondblclick="showText()">
     &copy; Ирина Проскурякова, ФБИ-24, 2 курс, 2024
 </footer>
 </body>
