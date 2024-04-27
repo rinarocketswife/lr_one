@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проскурякова Ирина Дмитриевна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <script>
+        function showMultiplication() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let inputC = document.getElementById('numberC');
+            let inputD = document.getElementById('numberD');
+            let inputE = document.getElementById('numberE');
+
+            let a = Math.max(parseInt(inputA.value), 0) || 0;
+            let b = Math.max(parseInt(inputB.value), 0) || 0;
+            let c = Math.max(parseInt(inputC.value), 0) || 0;
+            let d = Math.max(parseInt(inputD.value), 0) || 0;
+            let e = Math.max(parseInt(inputE.value), 0) || 0;
+
+            let priceA = 200;
+            let priceB = 300;
+            let priceC = 80;
+            let priceD = 40;
+            let priceE = 70;
+
+            let result = (a * priceA) + (b * priceB) + (c * priceC) + (d * priceD) + (e * priceE);
+            document.getElementById('output').innerHTML = 'Общая сумма: ' + result + ' рублей';
+        }
+        function clearCart() {
+            document.getElementById('numberA').value = '';
+            document.getElementById('numberB').value = '';
+            document.getElementById('numberC').value = '';
+            document.getElementById('numberD').value = '';
+            document.getElementById('numberE').value = '';
+            document.getElementById('output').innerHTML = '';
+        }
+
+    </script>
+    <style>
+        .message {
+            width: 140px;
+            height: 30px;
+            background-color: #f154cc;
+            border: 3px solid;
+            border-radius: 10px 10px;
+            display: inline-block;
+            text-align: center;
+            border-color: #ef12bb;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .cart {
+            border: 3px solid #64044a;
+            border-radius: 5px;
+            padding: 10px;
+            width: 300px;
+            margin: 0 auto;
+        }
+        .cart h2 {
+            text-align: center;
+            font-size: 25pt;
+        }    
+        .cart input {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .cart * {
+            font-size: 14pt;
+        }
+        #output {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    НГТУ, ФБ, Лабораторная работа 5
+   </header>
+
+   <main>
+    <div class="cart">
+        <h2>Корзина товаров</h2>
+        <label>Тунец консервированный (200 руб/шт): <input type="number" id="numberA" min="0" placeholder="Количество банок"></label><br>
+        <label>Творожный сыр ( 300 руб/шт): <input type="number" id="numberB" min="0" placeholder="Количество упаковок"></label><br>
+        <label>Огурец (80 руб/шт): <input type="number" id="numberC" min="0" placeholder="Количество штук"></label><br>
+        <label>Хлеб (40 руб/шт): <input type="number" id="numberD" min="0" placeholder="Количество булок"></label><br>
+        <label>Сок (70 руб/шт): <input type="number" id="numberE" min="0" placeholder="Количество упаковок"></label><br>
+        <div class="message" onclick="showMultiplication()">Итог</div>
+        <div id="output"></div>
+        <button style="width: 140px; height: 35px; background-color: rgb(226, 135, 207); color: #64044a; border-radius: 10px 10px; display: inline-block; text-align: center; cursor: pointer; margin-top: 10px;"  onclick="clearCart()">Очистить</button>
+    </div>
+    <div id="output"></div>
+   </main>
+
+   <footer>
+    &copy; Ирина Проскурякова, ФБИ-24, 2 курс, 2024
+</footer>
+</body>
+</html>
