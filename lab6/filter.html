@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проскурякова Ирина Дмитриевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if (color == 'Красный' && type == 'Футболка') {
+                wear.src = 'к2.png';
+            }
+            else if (color == 'Красный' && type == 'Майка') {
+                wear.src = 'к1.png';
+            }
+            else if (color == 'Красный' && type == 'Поло') {
+                wear.src = 'к3.png';
+            }
+            else if (color == 'Белый' && type == 'Футболка') {
+                wear.src = 'б3.png';
+            }
+            else if (color == 'Белый' && type == 'Майка') {
+                wear.src = 'б1.png';
+            }
+            else if (color == 'Белый' && type == 'Поло') {
+                wear.src = 'б2.png';
+            }
+            else if (color == 'Чёрный' && type == 'Футболка') {
+                wear.src = 'ч3.png';
+            }
+            else if (color == 'Чёрный' && type == 'Майка') {
+                wear.src = 'ч1.png';
+            }
+            else if (color == 'Чёрный' && type == 'Поло') {
+                wear.src = 'ч2.png';
+            } 
+        }
+    </script>
+    <style>
+        .filter {
+            border: 5px solid rgb(240, 128, 199);
+            border-radius: 15px;
+            width: fit-content;
+            height: fit-content;
+            text-align: center;
+            align-items: center;
+            padding: 20px;
+            margin: 10px auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        button {
+            cursor: pointer;
+            width: fit-content;
+            margin: auto;
+            display: grid;
+            place-items: center;
+        }
+        select {
+            width: 25%;
+            text-align: center;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    НГТУ, ФБ, Лабораторная работа 6
+   </header>
+
+   <main>
+        <div class="filter">
+            <h2>Фильтр для одежды</h2>
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Чёрный</option>
+            </select><br>
+            
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter()">Применить</button><br>
+            <img src="к2.png" id="wear">
+        </div>
+   </main>
+
+   <footer>
+    &copy; Ирина Проскурякова, ФБИ-24, 2 курс, 2024
+</footer>
+</body>
