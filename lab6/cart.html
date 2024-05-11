@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проскурякова Ирина Дмитриевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <script>
+        function totalScore() {
+            let inputBalance = document.getElementById('balance');
+            let balance = Math.max(parseInt(inputBalance.value), 0);
+
+            let inputA = document.getElementById('quantityA');
+            let inputB = document.getElementById('quantityB');
+            let inputC = document.getElementById('quantityC');
+            let inputD = document.getElementById('quantityD');
+            let inputE = document.getElementById('quantityE');
+            let inputF = document.getElementById('quantityF');
+            let inputG = document.getElementById('quantityG');
+
+            let a = parseInt(inputA.value) || 0;
+            let b = parseInt(inputB.value) || 0;
+            let c = parseInt(inputC.value) || 0;
+            let d = parseInt(inputD.value) || 0;
+            let e = parseInt(inputE.value) || 0;
+            let f = parseInt(inputF.value) || 0;
+            let g = parseInt(inputG.value) || 0;
+
+            let priceA = 10;
+            let priceB = 5;
+            let priceC = 20;
+            let priceD = 90;
+            let priceE = 25;
+            let priceF = 60;
+            let priceG = 40;
+
+            let itog = (a * priceA) + (b * priceB) + (c * priceC) + (d * priceD) + (e * priceE) + (f * priceF) + (g * priceG);
+            document.getElementById('output').innerHTML = 'Итого: ' + itog + ' рублей';
+            let message = document.getElementById('result');
+
+            if (balance === '' ||  isNaN(Number(balance))) {
+                message.innerHTML = 'Введите остаток средств на балансе!';
+            }
+            else if (balance < itog) {
+                message.innerHTML = 'У вас недостаточно средств на балансе!';
+            }
+            else if (a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0 || g < 0) {
+                message.innerHTML = 'Количество товара не может быть отрицательным!';
+            }
+            else if (!a && !b && !c && !d && !e && !f && !g) {
+                message.innerHTML = 'Нужно выбрать хотя бы один товар!';
+            }
+            else {
+                message.innerHTML = 'Товар успешно оформлен!';
+            }
+        }
+    </script>
+
+    <style>
+        .cartProd {
+            border: 3px solid #d214cf;
+            border-radius: 10px;
+            width: fit-content;
+            height: 650px;
+            text-align: center;
+            align-items: center;
+            padding: 22px;
+            margin: auto;
+            line-height: 1.6;
+            color: rgb(238, 1, 88);
+            font-weight: bold;
+        }
+        button {
+            cursor: pointer;
+            width: 100px;
+            height: 40px;
+            place-items: center;
+            margin-top: 8px;
+        }
+        input {
+            width: 200px;
+        }
+        table {
+            border: 5px solid #df0da3;
+            border-collapse: collapse;
+            width: 1000px;
+            height: 500px;
+            align-items: center;
+        }
+        td, th {
+            border: 1.5px solid #f08cdc;
+            padding: 5px;
+        }
+        h2 {
+            line-height: 0;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    НГТУ, ФБ, Лабораторная работа 6
+   </header>
+
+   <main>
+    <div class="cartProd">
+        <div>
+            <label>Мой баланс: <input type="number" placeholder="Введите количество средств" min="0" id="balance"></label>
+        </div>
+
+        <div>
+            <h2>Корзина товаров</h2>
+            <table>
+                <tr>
+                    <th>№</th>
+                    <th>Название</th>
+                    <th>Единица</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Яблоко</td>
+                    <td>Шт</td>
+                    <td>10 р</td>
+                    <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityA"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Груша</td>
+                    <td>Шт</td>
+                    <td>5 р</td>
+                    <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityB"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Банан</td>
+                    <td>Шт</td>
+                    <td>20 р</td>
+                    <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityC"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Клубника</td>
+                    <td>Шт</td>
+                    <td>90 р</td>
+                    <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityD"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Вишня</td>
+                    <td>Шт</td>
+                    <td>25 р</td>
+                    <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityE"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Сок</td>
+                    <td>Шт</td>
+                    <td>60 р</td>
+                    <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityF"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Огурец</td>
+                    <td>Шт</td>
+                    <td>40 р</td>
+                    <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityG"></td>
+                </tr>
+            </table>
+        </div>
+
+        <button onclick="totalScore()">ОК</button><br>
+        <div id="output"></div>
+        <div id="result"></div>
+    </div>
+   </main>
+
+   <footer>
+    &copy; Ирина Проскурякова, ФБИ-24, 2 курс, 2024
+</footer>
+</body>
+</html>
