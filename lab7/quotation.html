@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проскурякова Ирина Дмитриевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <script>
+        function showStock() {
+            const prices = [
+                99, 99, 100.3, 102.05, 102.85, 104.6, 103.35, 103.8, 104.9, 104.15
+            ];
+            const dates = [
+                '25.05.2024', '24.05.2024', '23.05.2024', '22.05.2024', '21.05.2024', '20.05.2024',
+                '19.05.2024', '18.05.2024', '17.05.2024', '16.05.2024'
+            ];
+
+            let table = document.getElementById('him-table');
+            let maxPrice = prices[0];
+            let minPrice = prices[0];
+            for(let i = 0; i < prices.length; i++) {
+                let tr = document.createElement('tr'); 
+                let tdPrice = document.createElement('td');
+                let tdDate = document.createElement('td');
+                let tdDiff = document.createElement('td');
+                tdDate.innerText = dates[i];
+                tdPrice.innerText = prices[i];
+
+                if (i > 0) {
+                    let diff = prices[i] - prices[i - 1];
+                    tdDiff.innerText = diff.toFixed(2);
+                } else {
+                    tdDiff.innerText = '-';
+                }
+
+                tr.appendChild(tdDate);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdDiff);
+                table.appendChild(tr);
+
+                if (prices[i] > maxPrice) {
+                    maxPrice = prices[i];
+                }
+                if (prices[i] < minPrice) {
+                    minPrice = prices[i];
+                }
+            }
+                
+                let sum = 0;
+                for(let i = 0; i < prices.length; i++) {
+                    sum += prices[i]; 
+                }
+                let average = (sum / prices.length).toFixed(2);
+
+                let averageRes = document.getElementById('average');
+                averageRes.innerHTML = `Среднее значение: ${average}`;
+
+                let minRes = document.getElementById('min');
+                minRes.innerHTML = `Минимальное значение: ${minPrice.toFixed(2)}`;
+
+                let maxRes = document.getElementById('max');
+                maxRes.innerHTML = `Максимальное значение: ${maxPrice.toFixed(2)}`;                
+            
+        }
+    </script> 
+</head>
+<body>
+   <header>
+    НГТУ, ФБ, Лабораторная работа 7
+   </header>
+
+   <main>
+    <button onclick="showStock()">Курс акций Нижнекамскнефтехим</button>
+            <table border="1" id="him-table"></table>
+            <div id="average"></div>
+            <div id="min"></div>
+            <div id="max"></div>
+    </main>
+
+    <footer>
+    &copy; Ирина Проскурякова, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
