@@ -38,6 +38,19 @@
                 main.appendChild(newBlock);
             }
         }
+
+        function add20_50() {
+            let main = document.querySelector('main');
+            for(let i = 20; i<=50; i+=2.5) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '40px';
+                newBlock.style.border = '1px solid';
+
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
     </script>
 </head>
 <body>
@@ -49,6 +62,7 @@
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <input type="number" placeholder="Введите количество блоков" min="0" id="qtBlocks">
+        <button onclick="add20_50()">20 => 50</button>
     </main>
 
     <footer>
