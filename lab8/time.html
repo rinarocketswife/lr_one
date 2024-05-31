@@ -15,19 +15,31 @@
                 top: 3px;
                 right: 10px;
                 font-size: 24px;
-                color: #0e0e0e;
-                padding: 8px;
-                background-color: #e8ac2d;
-                border-radius: 8px;
-                box-shadow: 4px 2px 2px rgba(247, 247, 247, 0.3);
+                color: rgb(172, 12, 164);
+                background-color: white;
+                z-index: 1;
+                border: 3px solid rgb(12, 12, 12);
             }
-            #seconds {
+            .clock {
+                width: 300px;
+                height: 300px;
+                border: 10px solid gray;
+                border-radius: 50%;
+                position: relative;
+                margin: 50px auto;
+                top: 50%;
+                background-color: rgb(154, 17, 138);
+            }
+            #second-hand {
+                width: 50%;
+                height: 6px;
+                background: rgb(18, 18, 18);
+                z-index: 2;
                 position: absolute;
                 top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 58px;
-                font-weight: bold;
+                transform-origin: 100%;
+                transform: rotate(90deg);
+                transition: transform 0.5s ease-in-out;
             }
     </style>
 </head>
@@ -39,6 +51,9 @@
 
     <main>
         <div id="seconds"></div>
+        <div class="clock">
+            <div id="second-hand"></div>
+        </div>
     </main>
 
     <footer>
