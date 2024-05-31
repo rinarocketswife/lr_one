@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Челябинвестбанк</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="logo-short.svg">
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const rubInput = document.getElementById("rubles");
+            const bynInput = document.getElementById("byn");
+            const convertButton = document.getElementById("convert");
+            const exchangeRateElement = document.getElementById("rate");
+            let exchangeRate;
+
+            async function getExchangeRate() {
+                try {
+                    const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+                    if (!response.ok) {
+                        throw new Error('Ошибка при получении курса валют');
+                    }
+                    const data = await response.json();
+                    exchangeRate = data.Valute.BYN.Value; 
+                    reverseRate = 1 / exchangeRate 
+                    exchangeRateElement.textContent = `1 рубль = ${reverseRate.toFixed(5)} Беларусский рубль`;
+                } catch (error) {
+                    console.error('Ошибка при получении курса валют:', error);
+                    alert('Не удалось получить актуальный курс валют. Попробуйте позже.');
+                }
+            }
+
+            getExchangeRate();
+
+            function convertCurrency() {
+                const rubValue = parseFloat(rubInput.value);
+                const bynValue = parseFloat(bynInput.value);
+
+                if (!isNaN(rubValue) && rubValue >= 0) {
+                    bynInput.value = (rubValue / exchangeRate).toFixed(3);
+                } else if (!isNaN(bynValue) && bynValue >= 0) {
+                    rubInput.value = (bynValue * exchangeRate).toFixed(3);
+                } else {
+                    alert('Введите корректное значение');
+                }
+            }
+            convertButton.addEventListener("click", convertCurrency);
+        });
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #f6f6f6;
+            color: #ffffff;
+            padding: 10px;
+            transition: top 0.3s;
+            font-size: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        header.scrolled {
+            top: -120px;
+        }
+
+        main {
+            margin-top: 90px;
+            padding: 10px;
+            word-wrap: break-word;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            margin-right: 150px;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #C8AF64;
+            transition: transform 0.3s;
+        }
+        ul li {
+            display: inline-block; 
+        }
+        a:hover {
+            color: #8C2828;
+        }
+        .converter {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1.5px solid #000000;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
+
+        .converter input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+        }
+
+        .converter button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #C8AF64;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .exchange-rate {
+            max-width: 300px;
+            margin: 50px auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+            text-align: center;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('2.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+    </style>
+</head>
+<body>
+   <header>
+        <a href="head.html">
+            <img src="logo-short.svg" alt="Логотип" class="logo">
+        </a>
+       <ul>
+        <li><a href="company.html">О КОМПАНИИ</a></li>
+        <li><a href="news.html">НОВОСТИ</a></li>
+        <li><a href="course.html">КУРС ВАЛЮТ</a></li>
+        <li><a href="contacts.html">КОНТАКТНЫЕ ДАННЫЕ</a></li>
+        <li><a href="video.html">ВИДЕО</a></li>
+       </ul>
+   </header>
+
+   <main>
+    <div class="exchange-rate" id="exchangeRate">
+        <h2>Текущий курс RUB / BYN</h2>
+        <p id="rate">Загрузка...</p>
+    </div>
+    <div class="converter">
+        <h2>Конвертер валют</h2>
+        <div>
+            <label for="rubles">Рубли:</label>
+            <input type="number" id="rubles" placeholder="Введите сумму в рублях"/>
+        </div>
+        <div>
+            <label for="byn">Беларусский рубль:</label>
+            <input type="number" id="byn" placeholder="Введите сумму в Беларруских рублях"/>
+        </div>
+        <button id="convert">Конвертировать</button>
+    </div>
+   </main>
+   <footer>
+   </footer>
+</body>
+</html>

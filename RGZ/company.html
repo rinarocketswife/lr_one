@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Челябинвестбанк</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="logo-short.svg">
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #f6f6f6;
+            color: #ffffff;
+            padding: 10px;
+            transition: top 0.3s;
+            font-size: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        header.scrolled {
+            top: -120px;
+        }
+
+        main {
+            margin-top: 90px;
+            word-wrap: break-word;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            margin-right: 150px;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #C8AF64;
+            transition: transform 0.3s;
+        }
+        ul li {
+            display: inline-block; 
+        }
+        a:hover {
+            color: #8C2828;
+        }
+        .block1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 100px;
+            box-sizing: border-box;
+            background-color: #c8af64bb;
+            height: 400px;
+            
+        }
+        .block1 p {
+            flex: 1;
+            width: 600px;
+            font-size: 18px;
+            margin-left: 30px;
+        }
+        .block1 .foto {
+            margin-right: 50px;
+            margin-top: 20px;
+            width: 500px;
+            height: 300px;
+        }
+        .block2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fefefe;
+            height: 400px;
+            margin-top: 0;
+        }
+        .block2 p {
+            flex: 1;
+            width: 600px;
+            font-size: 18px;
+            margin-right: 10px;
+            padding-right: 30px;
+        }
+        .block2 .foto2 {
+            padding-left: 50px;
+            margin-top: 20px;
+            width: 500px;
+            height: 300px;
+
+        }
+        .block3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 100px;
+            box-sizing: border-box;
+            background-color: #c8af64bb;
+            height: 400px;
+            margin-top: 0;
+        }
+        .block3 p {
+            flex: 1;
+            width: 600px;
+            font-size: 18px;
+            margin-left: 30px;
+        }
+
+        .block3 .foto3 {
+            margin-right: 50px;
+            margin-top: 20px;
+            width: 500px;
+            height: 300px;
+        }
+        .block4 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fefefe;
+            height: 500px;
+            margin-top: 0;
+        }
+        .block4 p {
+            flex: 1;
+            width: 600px;
+            font-size: 18px;
+            margin-right: 10px;
+            padding-right: 30px;
+        }
+        .block4 .foto4 {
+            padding-left: 50px;
+            margin-top: 20px;
+            width: 500px;
+            height: 300px;
+        }
+        .inf {
+            display: flex;
+            padding-top: 100px;
+        }
+        .head {
+            line-height: 1px;
+            font-size:30px;
+            color:#C8AF64;
+        }
+
+        .inf1 {
+            width: 200px;
+            height: 150px;
+            padding-left: 50px;
+            font-size: 22px;
+        }
+        .inf2 {
+            width: 200px;
+            height: 150px;
+            padding-left: 200px;
+            font-size: 22px;
+        }
+        .inf3 {
+            width: 300px;
+            height: 150px;
+            padding-left: 200px;
+            font-size: 22px;
+        }
+        .inf4 {
+            width: 200px;
+            height: 150px;
+            padding-left: 200px;
+            font-size: 22px;
+            padding-right: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+   <header>
+        <a href="head.html">
+            <img src="logo-short.svg" alt="Логотип" class="logo">
+        </a>
+       <ul>
+        <li><a href="company.html">О КОМПАНИИ</a></li>
+        <li><a href="news.html">НОВОСТИ</a></li>
+        <li><a href="course.html">КУРС ВАЛЮТ</a></li>
+        <li><a href="contacts.html">КОНТАКТНЫЕ ДАННЫЕ</a></li>
+        <li><a href="video.html">ВИДЕО</a></li>
+       </ul>
+   </header>
+
+   <main>
+    <div class="inf">
+        <div class="inf1">
+            <img src="1.svg" alt="Картинка1" class="Art1">
+            <p class="head"><b>№ 493</b></p>
+            <p style="color: #47402a;"><b>Генеральная лицензия ЦБ РФ</b></p>
+        </div>
+        <div class="inf2">
+            <img src="2.svg" alt="Картинка2" class="Art2">
+            <p class="head"><b>96</b></p>
+            <p style="color: #47402a;"><b>подразделений в Челябинской области</b></p>
+        </div>
+        <div class="inf3">
+            <img src="3.svg" alt="Картинка3" class="Art3">
+            <p style="color: #47402a;"><b>Высокий рейтинг кредитоспособности по данным ООО «Национальное Рейтинговое Агентство»</b></p>
+        </div>
+        <div class="inf4">
+            <img src="4.svg" alt="Картинка4" class="Art4">
+            <p class="head"><b>33 года</b></p>
+            <p style="color: #47402a;"><b>на рынке финансовых услуг</b></p>
+        </div>
+    </div>
+    <div class="block1">
+        <div>
+            <p>Акционерный челябинский инвестиционный банк "ЧЕЛЯБИНВЕСТБАНК" (ПАО) занимает одно из ведущих мест на финансовом рынке Южного Урала, входит в ТОП-100 банков России.</p>
+            <p>В системе Челябинвестбанка работают Головное Управление, 9 филиалов и 86 отделений в Челябинске и городах Челябинской области. Банк имеет Генеральную лицензию Банка России № 493 и входит в систему страхования вкладов.</p>
+            <p>В декабре 2023 года ООО «Национальное Рейтинговое Агентство» присвоило ПАО "ЧЕЛЯБИНВЕСТБАНК" кредитный рейтинг на уровне «А-|ru|». Прогноз по рейтингу «Стабильный».</p>
+        </div>
+        <img src="3.jpg" alt="Карта" class="foto">
+    </div>
+    <div class="block2">
+        <img src="4.jpg" alt="Карта2" class="foto2">
+        <div>
+            <p>Собственный капитал на начало 2024 г. составил около 14 млрд рублей, уставный капитал — 2,0 млрд рублей.</p>
+            <p>Банк обеспечивает бесперебойные и оперативные расчеты своих клиентов, привлекает свободные денежные средства и эффективно размещает их в реальный сектор экономики.</p>
+            <p>В целях поддержки малого бизнеса региона Челябинвестбанк активно участвует в реализации антикризисных программ кредитования, являясь уполномоченным банком Минэкономразвития
+            РФ, Министерства сельского хозяйства РФ, Министерства промышленности и торговли РФ. Кроме того, банк взаимодействует с РосТуризмом, реализует программы, разработанные Банком России совместно с Корпорацией МСП.</p>
+        </div>
+    </div>
+    <div class="block3">
+        <div>
+            <p>Банк имеет лицензию профессионального участника рынка ценных бумаг на осуществление брокерской, дилерской и депозитарной деятельности, активно работает на различных 
+                финансовых рынках, совершает банковские операции с золотом, серебром, платиной и металлами палладиевой группы на основании лицензии и в соответствии с законодательством РФ.</p>
+            <p>Банк выпускает собственные векселя, работает с клиентами в электронных системах "Клиент-Банк", "Интернет-Банк". На технологической базе банка работает система "Город".</p>
+        </div>
+        <img src="5.jpg" alt="Карта3" class="foto3">
+    </div>
+    <div class="block4">
+        <img src="6.jpg" alt="Карта4" class="foto4">
+        <div>
+            <p>Челябинвестбанк в собственном процессинговом центре выпускает карты "Мир", Visa, Mastercard, выпускает и обслуживает социальные карты. По данным на 1 января 2024 года в Челябинской области 
+                действуют 257 банкоматов и 191 терминал самообслуживания, клиентам предлагаются финансовые технологии: интернет-банк InvestPay, платежные сервисы Mir Pay и Samsung Pay (для карт "Мир").</p>
+            <p>В банке действует собственная служба инкассации, которая является одной из крупнейших в России негосударственных инкассаторских служб.</p>
+            <p>Банк занимает активную общественную позицию, участвует в деятельности Ассоциации российских банков, Торгово-промышленной палаты РФ, Южно-Уральской торгово-промышленной палаты, "Союза промышленников 
+                и предпринимателей". Выступая экспертами по вопросам, связанным с состоянием финансового рынка, участвуя в законотворческих процессах, руководство Челябинвестбанка вносит свой вклад в развитие социальных 
+                программ города и области, в укрепление экономики, повышение значимости и престижа Южного Урала.</p>
+        </div>
+    </div>
+   </main>
+   <footer>
+   </footer>
+</body>
+</html>

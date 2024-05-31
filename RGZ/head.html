@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Челябинвестбанк</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="logo-short.svg">
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #f6f6f6;
+            color: #ffffff;
+            padding: 10px;
+            transition: top 0.3s;
+            font-size: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        header.scrolled {
+            top: -120px;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            margin-right: 150px;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #C8AF64;
+            transition: transform 0.3s;
+        }
+        ul li {
+            display: inline-block; 
+        }
+        a:hover {
+            color: #8C2828;
+        }
+        .image h1 {
+            position: absolute; 
+            top: 25%; 
+            left: 30%; 
+            transform: translate(-50%, -50%); 
+            color: #ffffff; 
+            font-size: 80px; 
+        }
+        h1 {
+            border-bottom: 7px solid #C8AF64; 
+            display: inline-block; 
+            padding-bottom: 5px; 
+        }
+        .company-desc {
+            position: absolute; 
+            top: 45%; 
+            left: 22%; 
+            transform: translate(-50%, -50%); 
+            color: #ffffff; 
+            font-size: 25px; 
+        }
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="image">
+            <img src="2.jpg" alt="Фоновое изображение"  style= "width: 1600px">
+            <h1>ЧЕЛЯБИНВЕСТБАНК</h1> 
+            <div class="company-desc">
+                <p>Акционерный челябинский инвестиционный банк</p>
+            </div>
+   <header>
+    <img src="logo-short.svg" alt="Логотип" class="logo">
+       <ul>
+        <li><a href="company.html">О КОМПАНИИ</a></li>
+        <li><a href="news.html">НОВОСТИ</a></li>
+        <li><a href="course.html">КУРС ВАЛЮТ</a></li>
+        <li><a href="contacts.html">КОНТАКТНЫЕ ДАННЫЕ</a></li>
+        <li><a href="video.html">ВИДЕО</a></li>
+       </ul>
+   </header>
+
+   <main>  
+   </main>
+   <footer>
+   </footer>
+</body>
+</html>
